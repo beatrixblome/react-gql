@@ -1,23 +1,15 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect , useMemo} from 'react';
 
 export function CountryList({ country }) {
 
-    const [languageCode, setLanguageCode] = useState('')
+    const [languageCode, setLanguageCode] = useState([])
     const [firstLanguage, secondLanguage] = languageCode
-    
-    // const renderGoogle = useMemo( () => {
 
-    //     if (!languageCode) return [];
-    //     if ( ! searchLanguage ) return data.countries;
-    //     return languageCode.filter( language => 
-    //         language.reduce( (p,language) => p || language.name.toLocaleLowerCase().match(lowerCaseSearch), false)
-    //     )
-    //     }
-    //     , [languageCode, secondLanguage])
-    // arr.slice(Math.max(arr.length - 2, 1))
+    const renderGoogle = useEffect( () => {
 
-    const renderGoogle = () => {
-        if (languageCode !== " " && firstLanguage !== secondLanguage) {
+        if ( ! languageCode ) return console.log(`languageCode ${languageCode}, 1.${firstLanguage}, 2.${secondLanguage}`)
+
+        if ( firstLanguage && secondLanguage && firstLanguage !== secondLanguage) {
             return <input
                 visibility='hidden'
                 type='button'
@@ -25,9 +17,9 @@ export function CountryList({ country }) {
                 onClick={window.open(uri, "_blank")}
             />
            }        
-        }
+    }
+    ,[languageCode])
    
-
     const uri = `https://translate.google.com/?sl=${firstLanguage}&tl=${secondLanguage}&op=translate`
 
 
@@ -59,17 +51,15 @@ export function CountryList({ country }) {
                                         value={languageCode}
                                         key={`${language.code}-${language.name}`}
                                         onClick={(e) => {
-                                            setLanguageCode(language.code,...languageCode);
-                                            console.log(...languageCode)
+                                            setLanguageCode([language.code,...languageCode]);
                                           }}
-                                          
                                     >  {language.name}                  
                                     </span>
                 ))}
                 </li>
 
             </ul>
-            <div style={{ visibility: 'hidden', width:'0px'}}>{renderGoogle()}</div> 
+          { languageCode && <div style={{ visibility: 'hidden', width:'0px'}}>{renderGoogle}</div> }
             </>
     );
 }
