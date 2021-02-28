@@ -5,7 +5,7 @@ import { CountriesContainer }       from "./CountriesContainer";
 
 import "../styles/style.css";
 
-export function SearchInput() {
+export function LanguageSearch() {
 
     const { data, loading, error } = useQuery(GET_COUNTRIES);
     const [searchLanguage, setSearchLanguage] = useState("");
@@ -32,7 +32,9 @@ export function SearchInput() {
     };
 
     return (
-    <div className="search__container">
+        <div className="search__container">
+                   <div className="bg__image"></div>
+
         <div className="search__left"></div>
         <div className="triangle"></div>
         <form className="search__form" onSubmit={handleSearch}>
@@ -40,11 +42,12 @@ export function SearchInput() {
                 className="search__input"
                 type="text"
                 value={searchLanguage}
-                onChange={ e => setSearchLanguage(e.target.value) }
+                    onChange={e => setSearchLanguage(e.target.value)}
+                    placeholder="Sprache"
             ></input>
             <button type="submit" className="search__button">
                 <span>Suchen</span>
-                <i className="icon-chevron-right"></i>
+                    <i className="icon-chevron-right"></i>
             </button>
         </form>
         <div className="languages__list">

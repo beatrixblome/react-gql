@@ -29,29 +29,30 @@ body {
   z-index: 999;
   background-color: hsla(0, 0%, 100%, 0.6);
 }
-.myContact {
+.header__contact {
   width: 90%;
   margin: 0 auto;
-  padding: 5px;
   box-sizing: border-box;
   overflow: hidden;
+  height: 50px;
 }
 
-.myContact ul {
+.header__contact ul {
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 40px;
   list-style: none;
+  padding-bottom: 10px;
 }
-.myContact ul li {
+.header__contact ul li {
   padding: 0;
   float: right;
   margin-bottom: 10px;
 }
 
-.myContact ul li a {
+.header__contact ul li a {
   padding: 10px;
   font-size: 1.2em;
   font-weight: 700;
@@ -59,25 +60,23 @@ body {
   color: #0067b3;
   margin-right: 40px;
 }
-
-.headerNav {
-  display: table;
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
-  overflow: hidden;
-  border-spacing: 5px 0;
-  display: table;
-  margin-bottom: 0;
-  table-layout: fixed;
+.header__contact ul li i {
+  font-size: 1.2em;
+  color: #0067b3;
 }
+
 .header .image__container {
   position: absolute;
-  width: 133px;
-  left: 10%;
-  top: 30px;
+  width: 153px;
+  left: 15%;
+  top: 32px;
   z-index: 99999;
 }
+.header .image__container img {
+  width: 133px;
+  border-radius: 4px;
+}
+
 .menu__bar {
   background: #ff0025;
   display: table-cell;
@@ -85,12 +84,12 @@ body {
 }
 .main__nav {
   display: table;
+  width: 100%;
 }
 
-.main__nav {
-  float: right;
-  /* display: table-cell; */
-  width: 100%;
+.bg__image {
+  background-image: url('../assets/search.png');
+  height: 300px;
 }
 
 .menu__container {
@@ -119,7 +118,7 @@ body {
   width: 13%;
 }
 
-.menu__container a {
+.menu__container li a {
   display: table-cell;
   text-decoration: none;
   padding: 20px 0;
@@ -131,8 +130,7 @@ body {
   font-stretch: normal;
   box-sizing: border-box;
   border-spacing: 0.5em;
-  margin-left: 20%;
-  width: 100%å;
+  width: 100%;
 }
 
 .main__nav > ul > li > a {
@@ -162,7 +160,7 @@ body {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   overflow: hidden;
   margin-bottom: 20px;
-  list-style-type: none;
+  list-style: none;
   padding-left: 0;
 }
 
@@ -279,39 +277,21 @@ body {
 /* searchbar */
 
 .search__container {
-  padding-top: 170px;
+  padding-top: 114px;
   padding-bottom: 0;
   /* background-image: url('../assets/search.png'); */
-  background-repeat: none;
-}
-.search__left {
-  background: #ffe136;
-  width: 2000px;
-  height: 200px;
-  position: absolute;
-  left: -1800px;
-  top: 0;
+  /* background-position: center center; */
+  background-repeat: no-repeat;
 }
 
-.triangle {
-  position: absolute;
-  background-color: #0167b3;
-  width: 343px;
-  height: 130px;
-  background-position-x: right;
-  display: flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  align-items: center;
-}
 .search__form {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   vertical-align: middle;
-  padding: 40px;
+  padding: 39.5px;
+  background: #f2f1ed;
 }
 
 .search__input {

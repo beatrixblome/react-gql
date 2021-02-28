@@ -1,10 +1,11 @@
+import React from 'react';
 
-import React              from 'react';
-import ApolloClient       from 'apollo-boost';
-import { InMemoryCache }  from '@apollo/client';
 import { ApolloProvider } from '@apollo/react-hooks'
-import { SearchInput }      from './containers/SearchInput'
-import { Header }         from './containers/Header'
+import { InMemoryCache } from '@apollo/client';
+import ApolloClient from 'apollo-boost';
+
+import { LanguageSearch } from './containers/LanguageSearch'
+import { Header } from './containers/Header'
 
 import './styles/style.css'
 
@@ -18,7 +19,7 @@ export default function App() {
   return (
     <ApolloProvider client={client}> 
       <Header/>
-      <SearchInput/> 
+      <LanguageSearch/> 
     </ApolloProvider>
   );
 }
