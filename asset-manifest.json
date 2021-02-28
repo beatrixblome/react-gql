@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/react-gql/static/css/main.a8ebfd3a.chunk.css",
-    "main.js": "/react-gql/static/js/main.e47a23d7.chunk.js",
-    "main.js.map": "/react-gql/static/js/main.e47a23d7.chunk.js.map",
-    "runtime-main.js": "/react-gql/static/js/runtime-main.7c2d99d3.js",
-    "runtime-main.js.map": "/react-gql/static/js/runtime-main.7c2d99d3.js.map",
-    "static/js/2.4662cd82.chunk.js": "/react-gql/static/js/2.4662cd82.chunk.js",
-    "static/js/2.4662cd82.chunk.js.map": "/react-gql/static/js/2.4662cd82.chunk.js.map",
-    "static/js/3.6d3cbc25.chunk.js": "/react-gql/static/js/3.6d3cbc25.chunk.js",
-    "static/js/3.6d3cbc25.chunk.js.map": "/react-gql/static/js/3.6d3cbc25.chunk.js.map",
+    "main.css": "/react-gql/static/css/main.2e0202a1.chunk.css",
+    "main.js": "/react-gql/static/js/main.17995421.chunk.js",
+    "main.js.map": "/react-gql/static/js/main.17995421.chunk.js.map",
+    "runtime-main.js": "/react-gql/static/js/runtime-main.d67a9c8a.js",
+    "runtime-main.js.map": "/react-gql/static/js/runtime-main.d67a9c8a.js.map",
+    "static/js/2.c57c31f7.chunk.js": "/react-gql/static/js/2.c57c31f7.chunk.js",
+    "static/js/2.c57c31f7.chunk.js.map": "/react-gql/static/js/2.c57c31f7.chunk.js.map",
+    "static/js/3.b586ddce.chunk.js": "/react-gql/static/js/3.b586ddce.chunk.js",
+    "static/js/3.b586ddce.chunk.js.map": "/react-gql/static/js/3.b586ddce.chunk.js.map",
     "index.html": "/react-gql/index.html",
-    "static/css/main.a8ebfd3a.chunk.css.map": "/react-gql/static/css/main.a8ebfd3a.chunk.css.map",
-    "static/js/2.4662cd82.chunk.js.LICENSE.txt": "/react-gql/static/js/2.4662cd82.chunk.js.LICENSE.txt",
-    "static/media/logo.3024eed4.png": "/react-gql/static/media/logo.3024eed4.png"
+    "static/css/main.2e0202a1.chunk.css.map": "/react-gql/static/css/main.2e0202a1.chunk.css.map",
+    "static/js/2.c57c31f7.chunk.js.LICENSE.txt": "/react-gql/static/js/2.c57c31f7.chunk.js.LICENSE.txt",
+    "static/media/logo.d6bafe88.png": "/react-gql/static/media/logo.d6bafe88.png",
+    "static/media/style.css": "/react-gql/static/media/search.c209d2c9.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.7c2d99d3.js",
-    "static/js/2.4662cd82.chunk.js",
-    "static/css/main.a8ebfd3a.chunk.css",
-    "static/js/main.e47a23d7.chunk.js"
+    "static/js/runtime-main.d67a9c8a.js",
+    "static/js/2.c57c31f7.chunk.js",
+    "static/css/main.2e0202a1.chunk.css",
+    "static/js/main.17995421.chunk.js"
   ]
 }
