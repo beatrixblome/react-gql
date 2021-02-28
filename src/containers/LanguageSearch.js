@@ -45,10 +45,10 @@ export function LanguageSearch() {
                     onChange={e => setSearchLanguage(e.target.value)}
                     placeholder="Sprache"
             ></input>
-            <button type="submit" className="search__button">
+            {/* <button type="submit" className="search__button">
                 <span>Suchen</span>
                     <i className="icon-chevron-right"></i>
-            </button>
+            </button> */}
         </form>
         <div className="languages__list">
             <CountriesContainer countries={filteredCountries}/>

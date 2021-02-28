@@ -88,8 +88,11 @@ body {
 }
 
 .bg__image {
-  background-image: url('../assets/search.png');
-  height: 300px;
+  background-image: url('../assets/search1.png');
+  height: 450px;
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  background-position: 50%;
 }
 
 .menu__container {
@@ -176,7 +179,7 @@ body {
   font-weight: bold;
   color: white;
   letter-spacing: 4px;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
 }
 
 .container .country__emoji {
@@ -214,6 +217,10 @@ body {
   word-wrap: break-word;
   text-align: center;
   line-height: 15px;
+  cursor: pointer;
+}
+.container .country__languages span:hover {
+  background-color: #114105;
 }
 
 .container .country__captial {
@@ -259,14 +266,14 @@ body {
   width: 100%;
 }
 
-.container .country__languageButton button {
+.container .country__languageButton div {
   display: flex;
   color: white;
   background-color: #0167b3;
   font-weight: 700;
   margin: 0;
   padding: 10px 10px;
-  border-radius: 12px;
+  border-radius: 4px;
   font-size: 1em;
   width: 100%;
   border: none;
@@ -295,8 +302,7 @@ body {
 }
 
 .search__input {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 5px 12px;
   width: 20%;
   background-color: #fff;
   border-color: #d3cec4;

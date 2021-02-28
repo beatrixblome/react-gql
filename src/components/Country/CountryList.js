@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 
 export function CountryList({ country }) {
 
     const [languageCode, setLanguageCode] = useState('')
     const [firstLanguage, secondLanguage] = languageCode
     
+    // const renderGoogle = useMemo( () => {
+
+    //     if (!languageCode) return [];
+    //     if ( ! searchLanguage ) return data.countries;
+    //     return languageCode.filter( language => 
+    //         language.reduce( (p,language) => p || language.name.toLocaleLowerCase().match(lowerCaseSearch), false)
+    //     )
+    //     }
+    //     , [languageCode, secondLanguage])
+    // arr.slice(Math.max(arr.length - 2, 1))
+
     const renderGoogle = () => {
-        if (firstLanguage && secondLanguage && firstLanguage !== secondLanguage) {
+        if (languageCode !== " " && firstLanguage !== secondLanguage) {
             return <input
                 visibility='hidden'
                 type='button'
@@ -17,7 +28,7 @@ export function CountryList({ country }) {
         }
    
 
-    const uri = `https://translate.google.com/?sl=${firstLanguage}&tl=&${secondLanguage}&op=translate`
+    const uri = `https://translate.google.com/?sl=${firstLanguage}&tl=${secondLanguage}&op=translate`
 
 
     return (
@@ -34,28 +45,29 @@ export function CountryList({ country }) {
                     <span>{`Hauptstadt:  ${country.capital}`}</span>
                 </li>
            } 
-            <li className="country__languages">
-                    {country.languages.slice(0, 3).map(language => (
+                <li className="country__languageButton">
+     
+                    <div>                    
+                        <span>Sprache auswählen</span>
+                    <i className="icon-chevron-down"></i>
+                    </div>
+                </li>
+                <li className="country__languages">
+                    {country.languages.slice(0, 4).map(language => (
                                         <span
                                         type='submit'
                                         value={languageCode}
                                         key={`${language.code}-${language.name}`}
                                         onClick={(e) => {
                                             setLanguageCode(language.code,...languageCode);
-                                            console.log(language.code)
+                                            console.log(...languageCode)
                                           }}
+                                          
                                     >  {language.name}                  
                                     </span>
                 ))}
                 </li>
-                <li className="country__languageButton">
-                {country.languages.slice(0, 1).map(language => (
-                    <button>                    
-                        <span>Sprache auswählen</span>
-                    <i className="icon-chevron-right"></i>
-                    </button>
-                ))}
-            </li>
+
             </ul>
             <div style={{ visibility: 'hidden', width:'0px'}}>{renderGoogle()}</div> 
             </>
