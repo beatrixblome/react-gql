@@ -1,0 +1,86 @@
+
+ type Query {
+     countries(filter: CountryFilterInput): [Country!]!
+ }
+ 
+
+ input CountryFilterInput {
+     code: StringQueryOperatorInput //key
+     languages: StringQueryOperatorInput
+     name: StringQueryOperatorInput
+    }
+  
+ input StringQueryOperatorInput {
+      eq: String
+      ne: String
+      nin: [String]
+      regex: String
+      glob: String //
+      or: [String]
+      and: [String]
+ }
+   
+  input ContinentFilterInput {
+    code: StringQueryOperatorInput
+  }
+  
+  type Country {
+    code: ID!
+    name: String!
+    languages: [Language!]!
+  }
+  
+  input CountryFilterInput {
+    code: StringQueryOperatorInput
+    currency: StringQueryOperatorInput
+    continent: StringQueryOperatorInput
+  }
+  
+  type Language {
+    code: ID!
+    name: String
+    native: String
+  }
+  
+  input LanguageFilterInput {
+    code: StringQueryOperatorInput
+  }
+  
+  type Query {
+    countries(filter: CountryFilterInput): [Country!]!
+    country(code: ID!): Country
+    languages(filter: LanguageFilterInput): [Language!]!
+    language(code: ID!): Language
+  }
+  
+  type State {
+    code: String
+    name: String!
+    country: Country!
+  }
+  
+  input StringQueryOperatorInput {
+    eq: String
+    ne: String
+    in: [String]
+    nin: [String]
+    regex: String
+    glob: String
+  }
+  
+
+
+// eq: short for equal, must match the given data exactly
+// ne: short for not equal, must be different from the given data
+// regex: short for regular expression, must match the given pattern. Note that backslashes need to be escaped twice, so /\w+/ needs to be written as "/\\\\w+/".
+// glob: short for global, allows to use wildcard * which acts as a placeholder for any non-empty string
+// in: short for in array, must be an element of the array
+// nin: short for not in array, must NOT be an element of the array
+// gt: short for greater than, must be greater than given value
+// gte: short for greater than or equal, must be greater than or equal to given value
+// lt: short for less than, must be less than given value
+// lte: short for less than or equal, must be less than or equal to given value
+// elemMatch: short for element match, this indicates that the field you are filtering will return an array of elements, on which you can apply a filter using the previous operators
+
+
+   
