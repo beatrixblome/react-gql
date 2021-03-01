@@ -9,7 +9,7 @@ export function CountryList({ country }) {
 
         if ( ! languageCode ) return console.log(`languageCode ${languageCode}, 1.${firstLanguage}, 2.${secondLanguage}`)
 
-        if ( firstLanguage && firstLanguage !== secondLanguage) {
+        if ( firstLanguage  && secondLanguage && firstLanguage !== secondLanguage) {
             return <input
                 visibility='hidden'
                 type='button'
@@ -39,7 +39,7 @@ export function CountryList({ country }) {
                 } 
             <li className="country__languageButton">
                 <div>                    
-                    <span>Sprache auswählen</span>
+                    <span>Sprache auswählen: <h6>Wählen Sie zwei Sprachen aus einer Länderkarte</h6></span>
                     <i className="icon-chevron-down"></i>
                 </div>
             </li>

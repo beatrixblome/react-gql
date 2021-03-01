@@ -280,7 +280,9 @@ body {
   text-decoration: none;
   justify-content: space-between;
 }
-
+.container .country__languageButton h6 {
+  margin: 5px 0;
+}
 /* searchbar */
 
 .search__container {
