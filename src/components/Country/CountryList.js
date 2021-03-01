@@ -1,4 +1,4 @@
-import React, { useState, useEffect , useMemo} from 'react';
+import React, { useState, useEffect } from 'react';
 
 export function CountryList({ country }) {
 
@@ -18,16 +18,16 @@ export function CountryList({ country }) {
             />
            }        
     }
-    ,[languageCode])
+    ,[ languageCode ] )
    
     const uri = `https://translate.google.com/?sl=${firstLanguage}&tl=${secondLanguage}&op=translate`
 
 
     return (
         <>
-            <ul className="country">
+        <ul className="country">
             <li className="country__name">
-            <p>{country.name}</p>
+                <p>{country.name}</p>
             </li>
             <li className="country__emoji">
                 <span>{country.emoji}</span>
@@ -36,30 +36,29 @@ export function CountryList({ country }) {
                     <li className="country__captial">
                     <span>{`Hauptstadt:  ${country.capital}`}</span>
                 </li>
-           } 
-                <li className="country__languageButton">
-     
-                    <div>                    
-                        <span>Sprache auswählen</span>
+                } 
+            <li className="country__languageButton">
+                <div>                    
+                    <span>Sprache auswählen</span>
                     <i className="icon-chevron-down"></i>
-                    </div>
-                </li>
-                <li className="country__languages">
-                    {country.languages.slice(0, 4).map(language => (
-                                        <span
-                                        type='submit'
-                                        value={languageCode}
-                                        key={`${language.code}-${language.name}`}
-                                        onClick={(e) => {
-                                            setLanguageCode([language.code,...languageCode]);
-                                          }}
-                                    >  {language.name}                  
-                                    </span>
+                </div>
+            </li>
+            <li className="country__languages">
+                {country.languages.slice(0, 4).map(language => (
+                    <span
+                        type='submit'
+                        value={languageCode}
+                        key={`${language.code}-${language.name}`}
+                        onClick={(e) => {
+                            setLanguageCode([language.code,...languageCode]);
+                            }}
+                        >
+                        {language.name}                  
+                    </span>
                 ))}
-                </li>
-
-            </ul>
+            </li>
+        </ul>
           { languageCode && <div style={{ visibility: 'hidden', width:'0px'}}>{renderGoogle}</div> }
-            </>
+    </>
     );
 }

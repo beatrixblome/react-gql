@@ -1,5 +1,4 @@
-
-import React       from 'react';
+import React from 'react';
 import { CountryList } from '../components/Country/CountryList';
 
 export function CountriesContainer({countries}) {

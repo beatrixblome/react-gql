@@ -68,7 +68,9 @@
     glob: String
   }
   
-
+// conntries can only filter code: ContinentFilterInput
+// languages can only filter code: LanguageFilterInput
+// only for code
 
 // eq: short for equal, must match the given data exactly
 // ne: short for not equal, must be different from the given data

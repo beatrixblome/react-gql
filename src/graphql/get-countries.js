@@ -25,6 +25,5 @@ query languages($filter: LanguageFilterInput) {
 }
 `
 
-// conntries can only filter code: currency continent
+// conntries can only filter code
 // languages can only filter code
-// only for code

@@ -1,12 +1,11 @@
 import React, { useState, useMemo } from "react";
-import { useQuery }                 from "@apollo/client";
-import { GET_COUNTRIES }            from "../graphql/get-countries";
-import { CountriesContainer }       from "./CountriesContainer";
 
-import "../styles/style.css";
+import { useQuery } from "@apollo/client";
+import { GET_COUNTRIES } from "../graphql/get-countries";
+
+import { CountriesContainer } from "./CountriesContainer";
 
 export function LanguageSearch() {
-
     const { data, loading, error } = useQuery(GET_COUNTRIES);
     const [searchLanguage, setSearchLanguage] = useState("");
 
@@ -18,23 +17,22 @@ export function LanguageSearch() {
             country.languages.reduce( (p,language) => p || language.name.toLocaleLowerCase().match(lowerCaseSearch), false)
         )
         }
-    , [data,searchLanguage])
+    , [ data, searchLanguage ] )
 
 
     if ( loading || error ) {
         return <p>{error ? error.message : "Loading..."}</p>;
     }
 
-    if ( ! data ) return 'no data'
+    if ( ! data ) return 'no data...'
 
     const handleSearch = async (e) => {
         e.preventDefault();
     };
 
     return (
-        <div className="search__container">
-                   <div className="bg__image"></div>
-
+    <div className="search__container">
+        <div className="bg__image"></div>
         <div className="search__left"></div>
         <div className="triangle"></div>
         <form className="search__form" onSubmit={handleSearch}>
@@ -45,10 +43,6 @@ export function LanguageSearch() {
                     onChange={e => setSearchLanguage(e.target.value)}
                     placeholder="Sprache"
             ></input>
-            {/* <button type="submit" className="search__button">
-                <span>Suchen</span>
-                    <i className="icon-chevron-right"></i>
-            </button> */}
         </form>
         <div className="languages__list">
             <CountriesContainer countries={filteredCountries}/>
