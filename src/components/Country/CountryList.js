@@ -9,7 +9,7 @@ export function CountryList({ country }) {
 
         if ( ! languageCode ) return console.log(`languageCode ${languageCode}, 1.${firstLanguage}, 2.${secondLanguage}`)
 
-        if ( firstLanguage && secondLanguage && firstLanguage !== secondLanguage) {
+        if ( firstLanguage && firstLanguage !== secondLanguage) {
             return <input
                 visibility='hidden'
                 type='button'
